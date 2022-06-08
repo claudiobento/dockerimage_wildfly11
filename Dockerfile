@@ -32,7 +32,7 @@ RUN unzip /tmp/wildfly-11.0.0.Final.zip
 ENV JBOSS_HOME /opt/wildfly/wildfly-11.0.0.Final
 
 # Create Wildfly console user
-RUN $JBOSS_HOME/bin/add-user.sh admin admin@2017 --silent
+RUN $JBOSS_HOME/bin/add-user.sh admin <<PASS HERE>> --silent
 
 # Configure Wildfly
 RUN echo "JAVA_OPTS=\"\$JAVA_OPTS -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0\"" >> $JBOSS_HOME/bin/standalone.conf
